@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AybToNext – Mobile Games and Apps</title>
+<meta name="description" content="AybToNext makes mobile games and apps for Android. Home of TriBands: Triangle Board Game.">
+<!-- Hosted at https://aybtonext.github.io/ (the root index.html of the aybtonext.github.io repo).
+     Each app lives in its own folder: /tribands/ (index, privacy, terms). Add a new card per app. -->
+<link rel="icon" href="tribands/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0A0D1F; --bg2: #141A3A; --card: rgba(255,255,255,0.05); --border: rgba(255,255,255,0.09);
+    --text: #F2F4FF; --soft: #B8BEDD; --faint: #8189AE; --violet: #8B6DFF; --teal: #1FC7BE;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Inter", -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color: var(--text);
+         background: radial-gradient(1200px 600px at 50% -10%, #23296A 0%, var(--bg2) 35%, var(--bg) 75%) fixed, var(--bg);
+         line-height: 1.6; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 48px 16px 32px; }
+  a { color: #A99BFF; }
+  h1 { font-size: clamp(30px, 6vw, 44px); line-height: 1.1; margin: 0; font-weight: 800; letter-spacing: -0.02em; }
+  .lead { color: var(--soft); font-size: 18px; margin: 10px 0 0; max-width: 560px; }
+  h2 { font-size: 22px; margin: 44px 0 14px; }
+  .app { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; background: var(--card);
+         border: 1px solid var(--border); border-radius: 20px; padding: 18px; }
+  .app img { width: 88px; height: 88px; border-radius: 20px; flex: none; }
+  .app .info { flex: 1; min-width: 220px; }
+  .app h3 { margin: 0; font-size: 19px; }
+  .app p { margin: 4px 0 10px; color: var(--soft); font-size: 15px; }
+  .links { display: flex; gap: 10px 16px; flex-wrap: wrap; font-size: 14px; }
+  .btn { display: inline-flex; padding: 8px 16px; border-radius: 12px; font-weight: 600; text-decoration: none;
+         color: #0A0D1F; background: linear-gradient(100deg, var(--violet), var(--teal)); }
+  .links a:not(.btn) { color: var(--soft); align-self: center; }
+  .soon { color: var(--faint); font-size: 15px; border: 1px dashed var(--border); border-radius: 20px; padding: 18px; margin-top: 14px; }
+  footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--faint); font-size: 14px;
+           display: flex; gap: 16px; flex-wrap: wrap; justify-content: space-between; }
+  footer a { color: var(--soft); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>AybToNext</h1>
+  <p class="lead">Small, polished mobile games and apps for Android. Easy to learn, fun to master.</p>
+
+  <h2>Our apps</h2>
+
+  <div class="app">
+    <img src="tribands/icon.png" alt="TriBands icon">
+    <div class="info">
+      <h3>TriBands: Triangle Board Game</h3>
+      <p>Stretch bands, close triangles. Play the AI or 2–4 friends on one phone, offline.</p>
+      <div class="links">
+        <a class="btn" href="https://play.google.com/store/apps/details?id=com.aybtonext.tribands">Google Play</a>
+        <a href="tribands/">About</a>
+        <a href="tribands/privacy.html">Privacy Policy</a>
+        <a href="tribands/terms.html">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="soon">More apps are on the way.</div>
+
+  <footer>
+    <span>© 2026 AybToNext</span>
+    <span>Contact: <a href="mailto:aybtonext@gmail.com">aybtonext@gmail.com</a></span>
+  </footer>
+
+</div>
+</body>
+</html>
