@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TriBands: Triangle Board Game</title>
+<meta name="description" content="Stretch bands, close triangles. A strategy board game for Android: play the AI or 2–4 friends on one phone, offline.">
+<!-- Hosted at https://aybtonext.github.io/tribands/ (with icon.png, feature-graphic.png, privacy.html, terms.html next to it). -->
+<link rel="icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0A0D1F; --bg2: #141A3A; --card: rgba(255,255,255,0.05); --border: rgba(255,255,255,0.09);
+    --text: #F2F4FF; --soft: #B8BEDD; --faint: #8189AE;
+    --violet: #8B6DFF; --orange: #FF8A3D; --teal: #1FC7BE; --magenta: #EE5FB8; --gold: #F5C451;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Inter", -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color: var(--text);
+         background: radial-gradient(1200px 600px at 50% -10%, #23296A 0%, var(--bg2) 35%, var(--bg) 75%) fixed, var(--bg);
+         line-height: 1.6; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 40px 16px 32px; }
+  a { color: #A99BFF; }
+  .hero { display: flex; gap: 22px; align-items: center; flex-wrap: wrap; }
+  .hero img { width: 104px; height: 104px; border-radius: 24px; box-shadow: 0 12px 40px rgba(139,109,255,0.35); }
+  h1 { font-size: clamp(28px, 5vw, 40px); line-height: 1.15; margin: 0; font-weight: 800; letter-spacing: -0.02em; }
+  .tag { margin: 6px 0 0; color: var(--soft); font-size: 18px; }
+  .tag b { background: linear-gradient(100deg, var(--violet), var(--teal)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 26px; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; padding: 13px 22px; border-radius: 14px; font-weight: 600;
+         text-decoration: none; color: #0A0D1F; background: linear-gradient(100deg, var(--violet), var(--teal)); }
+  .btn.ghost { color: var(--text); background: var(--card); border: 1px solid var(--border); }
+  .banner { width: 100%; border-radius: 20px; margin: 32px 0 8px; border: 1px solid var(--border); display: block; }
+  h2 { font-size: 22px; margin: 40px 0 14px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 18px; }
+  .card h3 { margin: 0 0 6px; font-size: 16px; }
+  .card p { margin: 0; color: var(--soft); font-size: 15px; }
+  .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 8px; vertical-align: 1px; }
+  ol { color: var(--soft); padding-left: 22px; } ol li { margin: 6px 0; } ol b { color: var(--text); }
+  .note { color: var(--faint); font-size: 14px; }
+  footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--faint); font-size: 14px;
+           display: flex; gap: 16px; flex-wrap: wrap; justify-content: space-between; }
+  footer a { color: var(--soft); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <section class="hero">
+    <img src="icon.png" alt="TriBands icon">
+    <div>
+      <h1>TriBands: Triangle Board Game</h1>
+      <p class="tag">Stretch bands. <b>Claim triangles.</b></p>
+    </div>
+  </section>
+
+  <div class="cta">
+    <a class="btn" href="https://play.google.com/store/apps/details?id=com.aybtonext.tribands">Get it on Google Play</a>
+    <a class="btn ghost" href="#how">How to play</a>
+  </div>
+
+  <img class="banner" src="feature-graphic.png" alt="TriBands: bands stretched over pegs closing coloured triangles">
+
+  <h2>A quick, clever strategy game</h2>
+  <div class="grid">
+    <div class="card"><h3><span class="dot" style="background: var(--violet)"></span>Play the AI</h3>
+      <p>Three levels: Relaxed, Sharp and Expert. Expert looks ahead and punishes every open triangle.</p></div>
+    <div class="card"><h3><span class="dot" style="background: var(--orange)"></span>Friends on one phone</h3>
+      <p>Local match for 2, 3 or 4 players. Pick names, colours and markers, then pass the phone.</p></div>
+    <div class="card"><h3><span class="dot" style="background: var(--teal)"></span>Your goal</h3>
+      <p>First to 15, first to 25, or most triangles on the board. A 20-second turn clock keeps it fast.</p></div>
+    <div class="card"><h3><span class="dot" style="background: var(--magenta)"></span>Play offline</h3>
+      <p>No account and no Wi-Fi needed. Your progress, level and stats stay on your device.</p></div>
+  </div>
+
+  <h2 id="how">How to play</h2>
+  <ol>
+    <li>On your turn, <b>stretch one band</b> in a straight line over <b>4 pegs</b> on the hex board.</li>
+    <li>When your band <b>closes the last open side</b> of a small triangle, that triangle is yours.</li>
+    <li>One band can close <b>several triangles</b> at once, and every band you place can hand a triangle to your opponent.</li>
+    <li>Reach your goal first, or hold the most triangles when no band fits.</li>
+  </ol>
+  <p class="note">Chips in TriBands are virtual game currency only: they have no real-world value and cannot be exchanged for money or prizes.</p>
+
+  <footer>
+    <span>© 2026 <a href="https://aybtonext.github.io/">AybToNext</a></span>
+    <span><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a> · <a href="mailto:aybtonext@gmail.com">aybtonext@gmail.com</a></span>
+  </footer>
+
+</div>
+</body>
+</html>
